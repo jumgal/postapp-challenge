@@ -12,7 +12,7 @@ const protect = async (req, res, next) => {
         try {
           token = req.headers.authorization.split(" ")[1];
           const decoded = jwt.verify(token, process.env.JWT_SECRET);
-          req.user = await models.findByPk(decoded.id)
+          req.user = await models.User.findByPk(decoded.id)
           next();
         } catch (error) {
           res.status(401);
