@@ -12,7 +12,9 @@ export const signUpUser = async (req, res, next) => {
     }
 
     // Find if user already exists
-    const userExists = await models.User.findOne({ email });
+    const userExists = await models.User.findOne({where: {
+      email
+    }});
 
     if (userExists) {
       res.status(400);
