@@ -1,0 +1,30 @@
+{
+  "name": "posts-app",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "fullstack app challenge with react and node",
+  "main": "server.js",
+  "scripts": {
+    "start": "node posts-backend/server.js",
+    "server": "nodemon posts-backend/server.js",
+    "client": "npm run dev --prefix posts-frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Jumgal",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^8.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "pg": "^8.10.0",
+    "pg-hstore": "^2.3.4",
+    "react-router-bootstrap": "^0.26.2",
+    "sequelize": "^6.31.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
